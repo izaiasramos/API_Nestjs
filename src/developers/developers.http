@@ -14,11 +14,18 @@ Content-Type: application/json
 {
     "name": "izaias ramos",
     "email": "izaias-ramos@gmail.com",
-    "dateOfBirth": "1990-01-01"
+    "dateOfBirth": "2005-05-14"
 }
+
 ### update developers
 
 PATCH http://localhost:3000/developers/1
+Content-Type: application/json
+
+{
+    "name": "izaias ramos",
+    "email": "izaias@email.com"
+}
 
 ### delete developers
 

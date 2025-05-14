@@ -8,9 +8,9 @@ async function bootstrap() {
     new ValidationPipe({
       transform: true,
       whitelist: true,
-      forbidNonWhitelisted: true, // Rejects properties not in DTO
-      forbidUnknownValues: true, // Rejects unknown values
-      stopAtFirstError: true, // Stops at the first validation error
+      //forbidNonWhitelisted: true, // Rejects properties not in DTO
+      //forbidUnknownValues: true, // Rejects unknown values
+      //stopAtFirstError: true, // Stops at the first validation error
     }),
   );
   await app.listen(process.env.PORT ?? 3000);
