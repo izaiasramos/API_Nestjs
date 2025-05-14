@@ -1,0 +1,25 @@
+### get developers
+
+GET http://localhost:3000/developers
+
+### get developer 
+
+GET http://localhost:3000/developers/1
+
+### post developer
+
+POST http://localhost:3000/developers
+Content-Type: application/json
+
+{
+    "name": "izaias ramos",
+    "email": "izaias-ramos@gmail.com",
+    "dateOfBirth": "1990-01-01"
+}
+### update developers
+
+PATCH http://localhost:3000/developers/1
+
+### delete developers
+
+DELETE http://localhost:3000/developers/1
