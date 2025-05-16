@@ -4,7 +4,7 @@ GET http://localhost:3000/developers
 
 ### get developer 
 
-GET http://localhost:3000/developers/1
+GET http://localhost:3000/developers/dev_rR7mb5NfZwO6iWHI5yOAO
 
 ### post developer
 
@@ -19,11 +19,11 @@ Content-Type: application/json
 
 ### update developers
 
-PATCH http://localhost:3000/developers/1
+PATCH http://localhost:3000/developers/dev_rR7mb5NfZwO6iWHI5yOAO
 Content-Type: application/json
 
 {
-    "name": "izaias ramos",
+    "name": "izaias ramos fraça de bessa",
     "email": "izaias@email.com"
 }
 

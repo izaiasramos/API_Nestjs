@@ -1,7 +1,9 @@
 import { BeforeInsert, Column, PrimaryColumn, Entity } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { nanoid } = require('nanoid'); // Importando o nanoid
 
 @Entity('developers') // vai criar uma tabela chamada developers
 export class Developer {

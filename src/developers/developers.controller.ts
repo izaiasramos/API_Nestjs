@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  NotFoundException,
 } from '@nestjs/common';
 import { DevelopersService } from './developers.service';
 import { CreateDeveloperDto } from './dto/create-developer.dto';
@@ -26,20 +28,31 @@ export class DevelopersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.developersService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    const developer = await this.developersService.findOne(id);
+    if (!developer) {
+      throw new NotFoundException();
+    }
+    return developer;
   }
 
   @Patch(':id')
-  update(
+  async update(
     @Param('id') id: string,
     @Body() updateDeveloperDto: UpdateDeveloperDto,
   ) {
-    return this.developersService.update(+id, updateDeveloperDto);
+    const developer = await this.developersService.update(
+      id,
+      updateDeveloperDto,
+    );
+    if (!developer) throw new NotFoundException();
+    return developer;
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.developersService.remove(+id);
+  @HttpCode(204) // Retorna 204 No Content
+  async remove(@Param('id') id: string) {
+    const developer = await this.developersService.remove(id);
+    if (!developer) throw new NotFoundException();
   }
 }
