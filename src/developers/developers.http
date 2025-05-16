@@ -12,21 +12,21 @@ POST http://localhost:3000/developers
 Content-Type: application/json
 
 {
-    "name": "izaias ramos",
-    "email": "izaias-ramos@gmail.com",
+    "name": "luana franca",
+    "email": "luana-bessa@gmail.com",
     "dateOfBirth": "2005-05-14"
 }
 
 ### update developers
 
-PATCH http://localhost:3000/developers/dev_rR7mb5NfZwO6iWHI5yOAO
+PATCH http://localhost:3000/developers/dev_nEch3GBsGWguEm_Nr_PVJ
 Content-Type: application/json
 
 {
     "name": "izaias ramos fraça de bessa",
-    "email": "izaias@email.com"
+    "email": "izaias@email.com.br"
 }
 
 ### delete developers
 
-DELETE http://localhost:3000/developers/1
+DELETE http://localhost:3000/developers/dev_ACCQrCJfhTLIG8JtRiTjL
