@@ -22,17 +22,26 @@ Você precisa ter instalado:
 
 Node.js (v16 ou superior):
 
+Comandos para Iniciar/Intalar projeto Nestjs:
 
-Instale a extensão REST Client para testar a API.
+1º npm instal -g @nestjs/cli  -  Vai instalar o nestjs cli te permitindo criar um repositorio nest ou usar qualquer comando nestjs pela cli.
+
+2º nest new .    - Cria o projeto nestjs dentro da pasta atual.
+
+
+Instale a extensão REST Client para testar a os Endpoints da sua API(Rotas GET/POST/PUT/PATCH/DELETE).
 
 Instale as dependências:
 
 Rode:
 
-npm install
+npm i nanoid@3 sqlite3 typeorm @nestjs/typeorm class-validator class-transformer 
 
 Isso instala bibliotecas como NestJS, TypeORM e outras.
 
+Rode:
+
+nest generate resource developers - vai gerar/criar uma pasta chamada "developers" já com o CRUD completo criado caso voce aceite
 
 Inicie o servidor:
 
@@ -47,18 +56,58 @@ O servidor vai rodar em http://localhost:3000. Se você editar o código, ele re
 Como testar a API
 
 
-Use a extensão REST Client no VS Code:
+Use a extensão do VsCode REST Client no VS Code:       https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+Dentro da nova pasta developers criar um novo arquivo chamado:
+
+developers.http    -    dentro desse arrquivo vc cria seus endpoints CRUD:
+
+POST http://localhost:3000/developers
+Content-Type: application/json
+
+{
+  "name": "Izaias",
+  "email": "izaias@example.com",
+  "age": 30,
+  "dataOfBirth": "1993-04-15"
+}
+
+###    -- em arquivos .http deve ter ### separando cada requisição HTTP
+
+GET http://localhost:3000/developers/3
+
+###
+
+DELETE http://localhost:3000/developers/{id}
+
+###
+
+PUT http://localhost:3000/developers/{id}
+
+###
+
+PATCH http://localhost:3000/developers/1
+Content-Type: application/json
+
+{
+  "name": "Izaias Ramos",
+  "email": "izaias@ramos.com",
+  "age": 30,
+  "dataOfBirth": "1993-04-15"
+}
+
+E a extenção Rest Client vai criar um botão acima de cada endpoint chamado "Send Request" e com isso voce consegue testar cada endpoint
 
 
-Abra o arquivo src/developers/developers.http.
+Abra o arquivo src/developers/developers.http
 
 
-Clique em Send Request acima de cada requisição (ex.: POST http://localhost:3000/developers).
+Clique em Send Request acima de cada requisição (ex.: 
+
+POST http://localhost:3000/developers).
 
 
-Exemplos:
-
-
+vai te retornar:
 
 Criar um desenvolvedor:
 
